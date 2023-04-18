@@ -14,6 +14,8 @@ const Navbar = () => {
   return (
     <div className='flex p-4 bg-gray-200 z-40 fixed'>
 
+
+
         {/*left side navbar*/}
         <div className="flex ">
             <div className={roboto.className}>
