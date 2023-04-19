@@ -1,4 +1,4 @@
-import { faHeart, faSearch, faShoppingBasket, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faSearch, faShoppingBasket, faToggleOn, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Roboto } from 'next/font/google'
 import Link from 'next/link'
@@ -19,14 +19,14 @@ const Navbar = () => {
         {/*left side navbar*/}
         <div className="flex ">
             <div className={roboto.className}>
-                <h1 className="text-3xl font-bold pt-2">
+                <h1 className="text-3xl font-bold pt-2 max-sm:text-xl max-sm:w-40">
                 <Link href='/'>
                 Harri Shop
                 </Link>
                 </h1>
             </div>
             <div className={roboto.className}>
-                <ul className="flex p-2 ml-4 mt-2 text-meduim font-medium text-gray-500">
+                <ul className="flex p-2 ml-4 mt-2 text-meduim font-medium text-gray-500 max-sm:hidden">
                     <li className="ml-4">
                         <Link href='/'>Home</Link>
                     </li>
@@ -45,21 +45,21 @@ const Navbar = () => {
                 </ul>
             </div>
         </div>
-
+    
         {/*Right side navbar*/}
-        <div className='flex ml-96 mt-4 text-medium font-semibold'>
+        <div className='flex ml-96 mt-4 text-medium font-semibold max-sm:ml-20'>
             <div>
-                <input placeholder="Search for products"  className='h-10 w-56 rounded-2xl p-4 bg-slate-50'/>
-                <FontAwesomeIcon icon={faSearch} className='-ml-10 text-xl text-gray-500' />
+                <input placeholder="Search for products"  className='h-10 w-56 rounded-2xl p-4 bg-slate-50 max-sm:hidden'/>
+                <FontAwesomeIcon icon={faSearch} className='-ml-10 max-sm:-ml-28 text-xl text-gray-500' />
             </div>
-            <div className='ml-4'>
+            <div className='ml-4 max-sm:-ml-24'>
                 <ul className='flex'>
-                    <li className='ml-8 text-xl'>
+                    <li className='ml-8 text-xl max-sm:ml-4 max-sm:-mt-2'>
                     <Link href='/account'>
                         <FontAwesomeIcon icon={faUser} style={{color: "#597373",}} />
                     </Link>
                     </li>
-                    <li className='ml-8 text-xl'>
+                    <li className='ml-8 text-xl max-sm:ml-3 max-sm:-mt-2'>
                     <Link href='/whishlist'>
                         <FontAwesomeIcon className='text-3xl relative' icon={faHeart} style={{color: "#535f74",}} />
                         <div className='w-5 h-5 absolute bg-red-500 rounded-full -mt-10 ml-4'>
@@ -67,7 +67,7 @@ const Navbar = () => {
                         </div>
                     </Link>
                     </li>
-                    <li className='ml-8 text-xl'>
+                    <li className='ml-8 text-xl max-sm:ml-3 max-sm:-mt-2'>
                     <Link href='/shopingcard'>
                         <FontAwesomeIcon className='relative text-3xl' icon={faShoppingBasket} style={{color: "#525f75",}} />
                         <div className='w-5 h-5 absolute bg-red-500 rounded-full -mt-10 ml-4'>
@@ -75,9 +75,15 @@ const Navbar = () => {
                         </div>
                     </Link>
                     </li>
+                    <li className='ml-20 text-xl max-sm:ml-14 max-sm:-mt-2'>
+                    <Link href='/account'>
+                        <FontAwesomeIcon icon={faToggleOn}  style={{color: "#597373",}} />
+                    </Link>
+                    </li>
                 </ul>
             </div>
         </div>
+        
     </div>
   )
 }

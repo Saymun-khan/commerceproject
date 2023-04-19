@@ -18,13 +18,13 @@ const PopularProducts = () => {
 
   return (
     <div>
-        <div className="grid grid-cols-2 mb-20">
+        <div className="grid grid-cols-2 mb-20 max-sm:grid-cols-none">
           <div className="flex">
               <div className="w-0.5 h-10 bg-red-600"></div>
               <h1 className="ml-2 font-bold text-3xl text-slate-900">Popular Products</h1>
           </div>
           <div>
-              <ul className="flex p-2 ml-4 text-meduim font-medium text-gray-500 justify-end mr-10">
+              <ul className="flex p-2 ml-4 text-meduim font-medium text-gray-500 justify-end mr-10 max-sm:-ml-6 max-sm:mt-4">
                 <div>
                   <li className="ml-6">Top Rated</li>
                   <div className="w-20 h-0.5 bg-red-600 ml-5 mt-2"></div>
@@ -40,7 +40,7 @@ const PopularProducts = () => {
               </ul>
           </div>
         </div>
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-4 max-sm:grid-cols-none max-sm:ml-6">
         {
           Data.map(d => {
  

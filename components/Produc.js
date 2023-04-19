@@ -3,7 +3,7 @@ import Data from './Data'
 
 const Produc = () => {
     return(
-        <div className='grid grid-cols-4 ml-16'>
+        <div className='grid grid-cols-4 ml-16 max-sm:grid-cols-none'>
             {
                 Data.map(d => {
                     return(

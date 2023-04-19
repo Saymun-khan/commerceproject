@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const Footer = () => {
   return (
     <div>
-        <div className="mt-20 p-10 bg-white grid grid-cols-5 gap-x-20">
+        <div className="mt-20 p-10 bg-white grid grid-cols-5 max-sm:grid-cols-1 gap-x-20">
             <div>
                 <h1 className="text-3xl font-bold pt-2">Harri Shop</h1>
                 <h1 className="mt-4 font-semibold text-gray-600">

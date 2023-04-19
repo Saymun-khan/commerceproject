@@ -7,7 +7,7 @@ import BannerOne from '../img/BannerOnePic.png'
 
 const Banner = () => {
   return (
-    <div className="grid grid-cols-2 overflow-hidden mb-40" style={{height:'600px'}}>
+    <div className="grid grid-cols-2 max-sm:block overflow-hidden mb-40 max-sm:mb-10 max-sm:-ml-20" style={{height:'600px'}}>
     <motion.div animate={{x:100,opacity:0.7}} transition={{
         ease:"linear",
         duration:2,
@@ -41,7 +41,7 @@ const Banner = () => {
             alt="Picture" 
             width={600}
             height={600} 
-            className="mt-10 ml-20 rounded-full overflow-hidden"
+            className="mt-10 ml-20 max-sm:ml-2 rounded-full overflow-hidden"
         />
     </motion.div>
     </div>
