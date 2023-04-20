@@ -12,16 +12,16 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="p-10 bg-gray-100">
-    <div className="w-10/12 border-2 border-gray-400 justify-center ml-24 p-16">
+    <div className="p-10 bg-gray-100 max-sm:p-1">
+    <div className="w-10/12 border-2 border-gray-400 justify-center ml-24 p-16 max-sm:ml-1 max-sm:p-2 max-sm:w-full max-sm:mr-2">
         <h1 className="mb-6 text-3xl font-semibold ml-4">Send a message</h1>
         <form className="" onSubmit={handleSubmit}>
             
-            <div className="grid grid-cols-2 p-4 gap-10">
+            <div className="grid grid-cols-2 p-4 gap-10 max-sm:grid-cols-1 max-sm:p-2">
                 <Input Placeholder='Enter your name' />
                 <Input Placeholder='Enter your email' />
             </div>
-            <div className="grid grid-cols-2 p-4 gap-10">
+            <div className="grid grid-cols-2 p-4 gap-10 max-sm:grid-cols-1 max-sm:p-2 max-sm:mt-6">
                 <Input Placeholder='Mobile no' />
                 <Input Placeholder='Company' />
             </div>
@@ -45,7 +45,7 @@ export const Input = ({Placeholder}) => {
     return(
         <div>
             <input
-            className="w-11/12 h-11 p-6 placeholder:text-gray-500 bg-gray-200 outline-none focu focus:border-2 focus:border-red-400 focus:bg-slate-50"
+            className="w-11/12 h-11 p-6 max-sm:w-full placeholder:text-gray-500 bg-gray-200 outline-none focu focus:border-2 focus:border-red-400 focus:bg-slate-50"
             type="text"
             id="name"
             placeholder={Placeholder}

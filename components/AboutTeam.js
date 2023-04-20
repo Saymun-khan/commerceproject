@@ -18,8 +18,8 @@ import 'swiper/css/scrollbar';
 const AboutTeam = () => {
   return (
     <div>
-        <div className="p-20">
-            <div className="mb-16 grid grid-cols-2">
+        <div className="p-20 max-sm:p-4">
+            <div className="mb-16 grid grid-cols-2 max-sm:grid-cols-1">
                 <div>
                     <h1 className="text-5xl font-extrabold">One <span className="text-red-500">Team</span>,<br></br>Many Talents</h1>
                 </div>
@@ -29,11 +29,11 @@ const AboutTeam = () => {
                     <div className="w-40 h-0.5 bg-red-500"></div>
                 </div>
             </div>
-            <div>
+            <div className="mb-10">
             <Swiper
             modules={[Navigation,Pagination,Scrollbar,A11y]}
             spaceBetween={50}
-            slidesPerView={4}
+            slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
             scrollbar={{draggable:true}}

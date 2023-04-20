@@ -10,7 +10,7 @@ const QuickView = ({ProductCross}) => {
     <div className='w-10/12 h-screen shadow-lg shadow-slate-500 p-10 fixed z-50 top-0 left-0 bg-white mt-2 ml-36 mb-20 inset-0 flex max-sm:max-w-sm max-sm:mx-auto max-sm:overflow-y-scroll'>
         <div className='grid grid-cols-2 gap-20 max-sm:grid-cols-1'>
             <div>
-                <div>   
+                <div className='max-sm:flex'>   
                     <div className='w-1/2  bg-gray-100 max-sm:w-11/12'>
                         <Image 
                             src={IphonOne}
@@ -18,7 +18,11 @@ const QuickView = ({ProductCross}) => {
                             height={300}
                             
                         />
+                        
                     </div>
+                    <button className='ml-10 max-sm:-mt-36 sm:hidden'>
+                        <FontAwesomeIcon onClick={() => ProductCross()} icon={faCross} />
+                    </button>
                 </div>
                 <div className='grid grid-cols-4 max-sm:grid-cols-2'>
                     <div className='mt-40 w-36 h-36 items-center p-5 border-2 border-red-400 max-sm:mt-20 max-sm:w-24 max-sm:h-24'>
