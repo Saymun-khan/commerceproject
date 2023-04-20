@@ -5,7 +5,7 @@ import BannerTwoFooter from "./BannerTwoFooter"
 const BannerTwo = () => {
   return (
     <div>
-        <div className="grid grid-cols-2 bg-slate-100 bgImg max-w-sm mx-auto" > 
+        <div className="grid grid-cols-2 bg-slate-100 bgImg max-sm:max-w-sm mx-auto" > 
             <div className="mt-20 ml-24 mb-10 max-sm:m-6">
 
                 <h1 className="text-xl font-semibold text-gray-500">Apple iPhone 12 Pro</h1>

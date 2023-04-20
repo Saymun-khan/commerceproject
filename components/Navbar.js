@@ -10,7 +10,7 @@ const roboto = Roboto({
     subsets:['latin']
 })
 const Navbar = () => {
-    const {productNumber,whishlistNumber} = useAppSelector((state) => state.cart)
+    const {productNumber,whishlistNumber,productId} = useAppSelector((state) => state.cart)
   return (
     <div className='flex p-4 bg-gray-200 z-40 fixed'>
 
@@ -31,7 +31,7 @@ const Navbar = () => {
                         <Link href='/'>Home</Link>
                     </li>
                     <li className="ml-4">
-                        <Link href='/about'>About Us</Link>
+                        <Link href='/about'>About</Link>
                     </li>
                     <li className="ml-4">
                         <Link href='/shop'>Shop</Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
                         <Link href='/'>Pages</Link>
                     </li>
                     <li className="ml-4">
-                        <Link href='/contact'>Contact Us</Link>
+                        <Link href='/contact'>Contact</Link>
                     </li>
                 </ul>
             </div>
@@ -50,11 +50,11 @@ const Navbar = () => {
         <div className='flex ml-96 mt-4 text-medium font-semibold max-sm:ml-20'>
             <div>
                 <input placeholder="Search for products"  className='h-10 w-56 rounded-2xl p-4 bg-slate-50 max-sm:hidden'/>
-                <FontAwesomeIcon icon={faSearch} className='-ml-10 max-sm:-ml-28 text-xl text-gray-500' />
+                <FontAwesomeIcon icon={faSearch} className='-ml-10 max-sm:-ml-24 text-xl text-gray-500' />
             </div>
-            <div className='ml-4 max-sm:-ml-24'>
+            <div className='ml-4 max-sm:-ml-20'>
                 <ul className='flex'>
-                    <li className='ml-8 text-xl max-sm:ml-4 max-sm:-mt-2'>
+                    <li className='ml-8 text-xl'>
                     <Link href='/account'>
                         <FontAwesomeIcon icon={faUser} style={{color: "#597373",}} />
                     </Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
                     <Link href='/whishlist'>
                         <FontAwesomeIcon className='text-3xl relative' icon={faHeart} style={{color: "#535f74",}} />
                         <div className='w-5 h-5 absolute bg-red-500 rounded-full -mt-10 ml-4'>
-                            <h1 className='text-sm p-1 -mt-1 text-white'>{whishlistNumber}</h1>
+                            <h1 className='text-sm p-1 -mt-1 text-white'>{productId.length}</h1>
                         </div>
                     </Link>
                     </li>
@@ -75,7 +75,7 @@ const Navbar = () => {
                         </div>
                     </Link>
                     </li>
-                    <li className='ml-20 text-xl max-sm:ml-14 max-sm:-mt-2'>
+                    <li className='ml-20 text-xl max-sm:ml-3 max-sm:-mt-2'>
                     <Link href='/account'>
                         <FontAwesomeIcon icon={faToggleOn}  style={{color: "#597373",}} />
                     </Link>

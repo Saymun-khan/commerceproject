@@ -2,9 +2,10 @@ import { faEye, faHeartCirclePlus, faLink } from "@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
-import { useAppDispatch } from '../src/hooks'
-import { addToCart, addToWhishlist } from '../src/redux/cartSlice'
+import { useAppDispatch, useAppSelector } from '../src/hooks'
+import { addToCart, addToProductCartId, addToProductId, addToWhishlist, removeProductId } from '../src/redux/cartSlice'
 import Popup from "./Popup"
 
 
@@ -18,18 +19,28 @@ const PopularProductCard = ({Img,Title,Price,Id,ProductDetails}) => {
 
     //redux
     const dispatch = useAppDispatch()
+    const {productId} = useAppSelector((state) => state.cart)
+
 
     //function
     const handleAddToCart  = () => {
       setIsAdd(true)
       if(!isAdd) {
         dispatch(addToCart())
+        handleAddToCartProductId(Id)
       }
     }
 
     const handleAddToWhishlist = () => {
       dispatch(addToWhishlist(isAddWhishlist))
       setIsAddWhishlist(isAddWhishlist => !isAddWhishlist)
+
+      //handleproductid
+      if(isAddWhishlist){
+        dispatch(addToProductId(Id))
+      }else{
+        dispatch(removeProductId(Id))
+      }
 
       //handle popup
       setIsPopUP(true)
@@ -39,6 +50,14 @@ const PopularProductCard = ({Img,Title,Price,Id,ProductDetails}) => {
         setProgressValue(0)
       },3000)
     }
+
+    //handleAddToCartProductId
+    const handleAddToCartProductId = () => {
+      dispatch(addToProductCartId(Id))
+    }
+
+    //check product
+   
 
 
 
@@ -68,7 +87,7 @@ const PopularProductCard = ({Img,Title,Price,Id,ProductDetails}) => {
                   <motion.li 
                     whileHover={{scale:1.1}} 
                     whileTap={{scale:0.9}} 
-                    className="w-8 h-8 mt-2 bg-slate-100 hover:bg-pink-600"
+                    className={`w-8 h-8 mt-2  hover:bg-pink-600 ${isAddWhishlist ? 'bg-white' : 'bg-rose-500'}`}
                   >
                     <FontAwesomeIcon 
                       onClick={handleAddToWhishlist}
@@ -103,7 +122,7 @@ const PopularProductCard = ({Img,Title,Price,Id,ProductDetails}) => {
              {
                 showButton && (<motion.button animate={{
                   scale: [1, 1.1, 1]
-                }} className={` ${isAdd ? 'bg-rose-600' : 'bg-black'} text-white w-72 h-8 mt-24 -ml-10 hover:bg-rose-600`} onClick={handleAddToCart}>{isAdd ? 'View To Cart' : 'Add To Cart'}</motion.button>)
+                }} className={` ${productId.includes(Id) ? 'bg-rose-600' : 'bg-black'} text-white w-72 h-8 mt-24 -ml-10 hover:bg-rose-600`} onClick={handleAddToCart}>{isAdd ? (<Link href='/shopingcard'>View To Cart</Link>) : 'Add To Cart'}</motion.button>)
               }
              </div>
              

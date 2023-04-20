@@ -7,11 +7,11 @@ import IphonOne from '../img/iphoneone.png'
 
 const QuickView = ({ProductCross}) => {
   return (
-    <div className='w-10/12 h-screen shadow-lg shadow-slate-500 p-10 fixed z-50 top-0 left-0 bg-white mt-2 ml-36 mb-20 inset-0 flex'>
-        <div className='grid grid-cols-2 gap-20'>
+    <div className='w-10/12 h-screen shadow-lg shadow-slate-500 p-10 fixed z-50 top-0 left-0 bg-white mt-2 ml-36 mb-20 inset-0 flex max-sm:max-w-sm max-sm:mx-auto max-sm:overflow-y-scroll'>
+        <div className='grid grid-cols-2 gap-20 max-sm:grid-cols-1'>
             <div>
                 <div>   
-                    <div className='w-1/2  bg-gray-100'>
+                    <div className='w-1/2  bg-gray-100 max-sm:w-11/12'>
                         <Image 
                             src={IphonOne}
                             width={300}
@@ -20,8 +20,8 @@ const QuickView = ({ProductCross}) => {
                         />
                     </div>
                 </div>
-                <div className='grid grid-cols-4'>
-                    <div className='mt-40 w-36 h-36 items-center p-5 border-2 border-red-400'>
+                <div className='grid grid-cols-4 max-sm:grid-cols-2'>
+                    <div className='mt-40 w-36 h-36 items-center p-5 border-2 border-red-400 max-sm:mt-20 max-sm:w-24 max-sm:h-24'>
                         <Image 
                             src={IphonOne}
                             width={110}
@@ -29,7 +29,7 @@ const QuickView = ({ProductCross}) => {
                                 
                         />
                     </div>
-                    <div className='mt-40 w-36 h-36 items-center p-5 border-2 border-red-400'>
+                    <div className='mt-40 w-36 h-36 items-center p-5 border-2 border-red-400 max-sm:mt-20 max-sm:w-24 max-sm:h-24'>
                         <Image 
                             src={IphonOne}
                             width={110}
@@ -37,7 +37,7 @@ const QuickView = ({ProductCross}) => {
                                 
                         />
                     </div>
-                    <div className='mt-40 w-36 h-36 items-center p-5 border-2 border-red-400'>
+                    <div className='mt-40 w-36 h-36 items-center p-5 border-2 border-red-400 max-sm:mt-20 max-sm:w-24 max-sm:h-24'>
                         <Image 
                             src={IphonOne}
                             width={110}
@@ -45,7 +45,7 @@ const QuickView = ({ProductCross}) => {
                                 
                         />
                     </div>
-                    <div className='mt-40 w-36 h-36 items-center p-5 border-2 border-red-400'>
+                    <div className='mt-40 w-36 h-36 items-center p-5 border-2 border-red-400 max-sm:mt-20 max-sm:w-24 max-sm:h-24 max-sm:p-2'>
                         <Image 
                             src={IphonOne}
                             width={110}
@@ -60,7 +60,7 @@ const QuickView = ({ProductCross}) => {
                     <button className='ml-96'>
                         <FontAwesomeIcon onClick={() => ProductCross()} icon={faCross} />
                     </button>
-                    <h1 className='text-4xl font-semibold mt-40 mb-6'>ViewSonic Professional Monitor</h1>
+                    <h1 className='text-4xl font-semibold mt-40 mb-6 max-sm:mt-4'>ViewSonic Professional Monitor</h1>
                     <h1 className='font-light'>Shop Harry.com for every day low prices. 
                     Free shipping on orders $35+ or Pickup In-store and get</h1>
                     <h1 className='mt-4'>$290.00 <span>$281.09</span></h1>

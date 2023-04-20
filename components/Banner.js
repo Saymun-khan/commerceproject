@@ -7,7 +7,7 @@ import BannerOne from '../img/BannerOnePic.png'
 
 const Banner = () => {
   return (
-    <div className="grid grid-cols-2 max-sm:block overflow-hidden mb-40 max-sm:mb-10 max-sm:-ml-20" style={{height:'600px'}}>
+    <div className="grid grid-cols-2 overflow-hidden mb-40 max-sm:grid-cols-1 max-sm:-ml-14 max-sm:-mb-16 " style={{height:'600px'}}>
     <motion.div animate={{x:100,opacity:0.7}} transition={{
         ease:"linear",
         duration:2,
@@ -18,7 +18,7 @@ const Banner = () => {
             <div className="w-0.5 h-10 bg-red-600"></div>
             <h1 className="ml-2 font-medium text-gray-500 -mt-1">Best Ear<br></br> Headphones</h1>
         </div>
-        <h1 className="text-7xl font-semibold mt-4 mb-4">Music To <br></br> Fill Your Heart</h1>
+        <h1 className="text-7xl font-semibold mt-4 mb-4 max-sm:text-3xl">Music To <br></br> Fill Your Heart</h1>
         <Link href='/shop'>
         <button className="w-40 mt-20 h-10 border-4 border-black text-gray-900 font-semibold mb-40 hover:bg-black hover:text-white">Shop Now <FontAwesomeIcon icon={faArrowDown} /></button>
         </Link>
@@ -41,7 +41,7 @@ const Banner = () => {
             alt="Picture" 
             width={600}
             height={600} 
-            className="mt-10 ml-20 max-sm:ml-2 rounded-full overflow-hidden"
+            className="mt-10 ml-20 rounded-full overflow-hidden"
         />
     </motion.div>
     </div>

@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const AboutBanner = () => {
   return (
     <div className="bg-white">
-      <div className="h-96 bg-gray-300 text-center mt-40">
-        <h1 className="text-xl text-black font-semibold">About Us</h1>
+      <div className="h-96 bg-gray-300 text-center">
+        <h1 className="text-xl text-black font-semibold p-28">About Us</h1>
         <h1 className="text-5xl font-extrabold text-black">Welcome to our</h1>
         <h1 className="text-5xl font-extrabold text-black">Harri shop</h1>
       </div>
