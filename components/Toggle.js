@@ -1,9 +1,14 @@
-import { faAlignLeft, faAnchorLock, faAppleWhole } from '@fortawesome/free-solid-svg-icons'
+import { faAlignLeft, faAnchorLock, faAppleWhole, faCrosshairs } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
-import React from 'react'
+import { useAppDispatch } from '../src/hooks'
+import { toggleChange } from '../src/redux/cartSlice'
 
 const Toggle = () => {
+  const dispatch = useAppDispatch()
+  const handleChange = () => {
+    dispatch(toggleChange())
+  }
   return (
     <div>
     <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
@@ -15,33 +20,36 @@ const Toggle = () => {
     <div class="pointer-events-auto w-screen max-w-md">
       <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
         <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
-          <div class="mt-20">
+          <div className='ml-64 mt-4'>
+            <FontAwesomeIcon onClick={handleChange} className='text-2xl' icon={faCrosshairs} />
+          </div>
+          <div class="mt-6">
             <div class="flow-root">
               <ul role="list" class="-my-6 divide-y divide-gray-300">
                 <li class="flex py-6">
                   <h1 className='text-2xl font-bold ml-6'>
-                    <Link href='/'>Home</Link>
+                    <Link href='/' onClick={handleChange}>Home</Link>
                   </h1>
                 </li>
 
                 <li class="flex py-6">
                   <h1 className='text-2xl font-bold ml-6'>
-                    <Link href='/about'>About Us</Link>
+                    <Link href='/about' onClick={handleChange}>About Us</Link>
                   </h1>
                 </li>
                 <li class="flex py-6">
                   <h1 className='text-2xl font-bold ml-6'>
-                    <Link href='/shop'>Shop</Link>
+                    <Link href='/shop' onClick={handleChange}>Shop</Link>
                   </h1>
                 </li>
                 <li class="flex py-6">
                   <h1 className='text-2xl font-bold ml-6'>
-                    <Link href='/'>Pages</Link>
+                    <Link href='/' onClick={handleChange}>Pages</Link>
                   </h1>
                 </li>
                 <li class="flex py-6">
                   <h1 className='text-2xl font-bold ml-6'>
-                    <Link href='/contact'>Contact Us</Link>
+                    <Link href='/contact' onClick={handleChange}>Contact Us</Link>
                   </h1>
                 </li>
                 <li class="flex py-6">

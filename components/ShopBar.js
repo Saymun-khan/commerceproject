@@ -14,7 +14,7 @@ const ShopBar = () => {
             {
                 //shop filtering bar
             }
-            <div className="w-11/12 h-20 border-2 border-slate-400 p-4">
+            <div className="w-11/12 h-20 border-2 border-slate-400 p-4 mt-24">
                 <div className="grid grid-cols-2">
                     <div>
                         <h1 className="text-xl font-extralight">Showing 1-9 of 27 results</h1>

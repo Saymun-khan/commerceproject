@@ -2,15 +2,20 @@ import { faHeart, faSearch, faShoppingBasket, faToggleOn, faUser } from '@fortaw
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Roboto } from 'next/font/google'
 import Link from 'next/link'
-import { useAppSelector } from '../src/hooks'
-
+import Toggle from '../components/Toggle'
+import { useAppDispatch, useAppSelector } from '../src/hooks'
+import { toggleChange } from '../src/redux/cartSlice'
 
 const roboto = Roboto({
     weight:'400',
     subsets:['latin']
 })
 const Navbar = () => {
-    const {productNumber,whishlistNumber,productId} = useAppSelector((state) => state.cart)
+    const {productNumber,whishlistNumber,productId,isToggle} = useAppSelector((state) => state.cart)
+    const dispatch = useAppDispatch()
+    const handleToggle = () => {
+        dispatch(toggleChange())
+    }
   return (
     <div className='flex p-4 bg-gray-200 z-40 fixed'>
 
@@ -76,12 +81,17 @@ const Navbar = () => {
                     </Link>
                     </li>
                     <li className='ml-20 text-xl max-sm:ml-3 max-sm:-mt-2'>
-                    <Link href='/account'>
-                        <FontAwesomeIcon icon={faToggleOn}  style={{color: "#597373",}} />
+                    <Link href=''>
+                        <FontAwesomeIcon icon={faToggleOn}  style={{color: "#597373",}} onClick={handleToggle} />
                     </Link>
                     </li>
                 </ul>
             </div>
+        </div>
+        <div>
+            {
+                isToggle ? <Toggle /> : ''
+            }
         </div>
         
     </div>

@@ -6,6 +6,7 @@ export interface CounterState {
   productNumber: number;
   productId: any[];
   addToCartId: any[];
+  isToggle: boolean;
 }
 
 const initialState: CounterState = {
@@ -13,6 +14,7 @@ const initialState: CounterState = {
   productNumber: 0,
   productId: [],
   addToCartId: [],
+  isToggle: false,
 };
 
 export const cartSlice = createSlice({
@@ -53,6 +55,9 @@ export const cartSlice = createSlice({
       const cartId: number = state.addToCartId.indexOf(action.payload);
       state.addToCartId.splice(cartId, 1);
     },
+    toggleChange: (state) => {
+      state.isToggle = !state.isToggle;
+    },
   },
 });
 
@@ -65,6 +70,7 @@ export const {
   addToProductCartId,
   removeToProductCartId,
   removeToBusket,
+  toggleChange,
 } = cartSlice.actions;
 
 export const selectCount = (state: AppState) => state.cart.productNumber;
