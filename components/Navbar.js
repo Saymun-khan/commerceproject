@@ -57,7 +57,7 @@ const Navbar = () => {
                 <input placeholder="Search for products"  className='h-10 w-56 rounded-2xl p-4 bg-slate-50 max-sm:hidden'/>
                 <FontAwesomeIcon icon={faSearch} className='-ml-10 max-sm:-ml-24 text-xl text-gray-500' />
             </div>
-            <div className='ml-4 max-sm:-ml-20'>
+            <div className='ml-24 max-sm:-ml-20'>
                 <ul className='flex'>
                     <li className='ml-8 text-xl'>
                     <Link href='/account'>
@@ -80,7 +80,7 @@ const Navbar = () => {
                         </div>
                     </Link>
                     </li>
-                    <li className='ml-20 text-xl max-sm:ml-3 max-sm:-mt-2'>
+                    <li className='ml-20 text-xl max-sm:ml-3 max-sm:-mt-2 sm:hidden'>
                     <Link href=''>
                         <FontAwesomeIcon icon={faToggleOn}  style={{color: "#597373",}} onClick={handleToggle} />
                     </Link>
