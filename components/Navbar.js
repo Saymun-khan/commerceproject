@@ -1,7 +1,8 @@
-import { faHeart, faSearch, faShoppingBasket, faToggleOn, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCross, faHeart, faSearch, faShoppingBasket, faToggleOn, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Roboto } from 'next/font/google'
 import Link from 'next/link'
+import { useState } from 'react'
 import Toggle from '../components/Toggle'
 import { useAppDispatch, useAppSelector } from '../src/hooks'
 import { toggleChange } from '../src/redux/cartSlice'
@@ -13,11 +14,19 @@ const roboto = Roboto({
 const Navbar = () => {
     const {productNumber,whishlistNumber,productId,isToggle} = useAppSelector((state) => state.cart)
     const dispatch = useAppDispatch()
+    const [search,setSearch] = useState(false)
+
+
+    //function handler
     const handleToggle = () => {
         dispatch(toggleChange())
     }
+
+    const handleSearcch = () => {
+        setSearch(search => !search)
+    }
   return (
-    <div className='flex p-4 bg-gray-200 z-40 fixed'>
+    <div className='flex p-4 bg-gray-200 z-40 fixed max-sm:w-screen'>
 
 
 
@@ -54,10 +63,11 @@ const Navbar = () => {
         {/*Right side navbar*/}
         <div className='flex ml-96 mt-4 text-medium font-semibold max-sm:ml-20'>
             <div>
-                <input placeholder="Search for products"  className='h-10 w-56 rounded-2xl p-4 bg-slate-50 max-sm:hidden'/>
-                <FontAwesomeIcon icon={faSearch} className='-ml-10 max-sm:-ml-24 text-xl text-gray-500' />
+                <input placeholder="Search for products"  className={`h-10 w-56 rounded-2xl p-4 bg-slate-50 ${search ? 'max-sm:-ml-32 max-sm:w-48 max-sm:-mt-8' : 'max-sm:hidden'}`}/>
+                <FontAwesomeIcon icon={search ? faCross : faSearch} onClick={handleSearcch} className={`-ml-10 ${search ? 'max-sm:ml-10 max-sm:-mt-10' : 'max-sm:-ml-24'} text-xl text-gray-500`} />
             </div>
-            <div className='ml-24 max-sm:-ml-20'>
+           {
+            search ? '' : ( <div className='ml-24 max-sm:-ml-20'>
                 <ul className='flex'>
                     <li className='ml-8 text-xl'>
                     <Link href='/account'>
@@ -86,7 +96,8 @@ const Navbar = () => {
                     </Link>
                     </li>
                 </ul>
-            </div>
+            </div>)
+           }
         </div>
         <div>
             {
