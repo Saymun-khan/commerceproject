@@ -1,6 +1,9 @@
-import MainBar from "../../components/MainBar"
-import Toggle from '../../components/Toggle'
-import { useAppSelector } from "../hooks"
+import MainBar from "../../components/MainBar";
+import Toggle from '../../components/Toggle';
+import { useAppSelector } from "../hooks";
+
+
+
 
 const Home = () => {
   const {isToggle} = useAppSelector((state) => state.cart)
@@ -14,3 +17,5 @@ const Home = () => {
 }
 
 export default Home
+
+
