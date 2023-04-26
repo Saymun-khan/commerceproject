@@ -1,6 +1,6 @@
-import ContactForm from "./ContactForm"
 import ContactLocation from "./ContactLocation"
 import ContactUsCard from "./ContactUsCard"
+import ContactFormUs from "./form"
 
 const ContactUs = () => {
   return (
@@ -18,7 +18,7 @@ const ContactUs = () => {
                 <ContactUsCard />
             </div>
             <div>
-                <ContactForm/>
+                <ContactFormUs/>
             </div>
             <div className="bg-white p-6">
                 <h1 className="font-semibold mb-6 mt-6 ml-20 max-sm:ml-2">LOCATIONS</h1>
