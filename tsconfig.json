@@ -19,7 +19,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/pages/_app.js",
-    "components/WhishlistCard.js"
+    "components/WhishlistCard.js",
+    "prisma/seed.js"
   ],
   "exclude": ["node_modules"]
 }
